@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>  
+	<script>
+	<!--Countdown timer at home page-->
+		function countdown(secs) {
+			if (secs == 5) {
+				clearTimeout(timer);
+				window.location = "#home";
+			}
+			secs--;
+			var timer = setTimeout('countdown('+secs+')', 1000);
+			}
+			window.addEventListener("load", countdown(10), false);
+		</script> 
+		
+	<script>
+		function choice(){
+			var firstChoice = document.getElementById("txtOne").value;
+			var secondChoice = document.getElementById("txtTwo").value;
+			document.getElementById("matchName").innerHTML = firstChoice + " " + secondChoice;
+		
+			}
+			
+	</script>
+	
+		
+		
+	<script>
+	function percentage()
+			{
+			var percent=["80%","81%","82%","83%","84%","85%","86%","87%","88%","89%","90%","91%",
+			"92%","93%","94%","95%","96%","97%","98%","99%","100%"];
+			var randNum= Math.floor(Math.random()*20);
+			document.getElementById('txtper').innerHTML = percent[randNum];
+			window.location = "#page3";
+			var firstChoice = document.getElementById("txtOne").value;
+			var secondChoice = document.getElementById("txtTwo").value;
+			document.getElementById("per").innerHTML = firstChoice + " " + secondChoice;
+			}
+			
+			function myPlay() {
+				document.getElementById('txtOne').value = "";
+				document.getElementById('txtTwo').value = "";
+				document.getElementById("matchName").innerHTML = "";
+				
+				window.location = "#page1";
+			}
+			
+			function countdown(secs) {
+			if (secs == 5) {
+				clearTimeout(timer);
+				window.location = "#home";
+			}
+			secs--;
+			var timer = setTimeout('countdown('+secs+')', 1000);
+			}
+			window.addEventListener("load", countdown(0), false);
+	</script>
+	
+</head>
+<body>
+<div data-role="page">
+	<br><br>
+	<img src="images/idikit.gif" />
+</div>
+
+	<!--Home page-->
+<div data-role="page" data-theme="b" id="home" align="center">
+	<div data-role="header" data-theme="b">
+		<img src="images/home.png"  />
+		
+	</div>
+	<div data-role="content">
+	<br>
+			<a href="#page1" data-transition="pop" style="text-decoration:none"><button onclick="myPlay() ">PLAY</button></a>
+			<br>
+			<a href="#page2" data-transition="pop" style="text-decoration:none"><button>ABOUT</button></a>
+	</div>
+</div>
+
+
+	<!--play-->
+<div data-role="page" data-theme="b" id="page1">
+	<div data-role="content">
+		 <input type = "text" id="txtOne" placeholder="Enter Your Name:" >  
+		 <input type = "text" id="txtTwo" placeholder="Enter Your Crush Name: " >
+		 <h3 id="matchName"></h3>
+			<button onClick="choice()">Match</button> <br>
+			<h5 id="txtStat" style="text-align:center"></h5>
+                <div class="col-lg-12 text-center">
+                </div> 
+					<button onClick = "percentage()" > Percentage</button> 
+
+</section>
+	</div>
+	<div data-role="footer" data-theme="b" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#home"  data-transition="pop">HOME</a>
+			</ul>
+		</div>
+	</div>
+</div>
+
+	<!--About the developer-->
+<div data-role="page"  id="page2">
+	<div data-role="header" data-theme="e">
+	</div>
+	<div data-role="content">
+			<h1>ABOUT</h1>
+			<h3><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspThis application will generate the percentage of your name and the name of your crush</h3>
+			<br>
+			<h3>Developed by:<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBryan M. Santos</h3>
+	</div>
+	<div data-role="footer" data-theme="b" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#home" data-transition="pop">HOME</a>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!--play-->
+<div data-role="page" data-theme="b" id="page3">
+	<div data-role="content">
+					<img src="images/1234.gif" />
+					<h5 id="per" align="center"> </h5>
+					<h3 id= "txtper" style="text-align:center"> </h3>
+<center><iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Match-Maker/1603403576539134?skip_nax_wizard=true&ref_type=logout_gear&amp;
+width=500&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=30"
+scrolling="no"
+frameborder="0"
+allowTransparency="true"></center>
+</iframe>
+</section>
+	</div>
+	<div data-role="footer" data-theme="b" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#home"  data-transition="pop">HOME</a>
+			</ul>
+		</div>
+	</div>
+</div>
+
+	
+</div>
+</div>
+
+
+</body>
+</html>
